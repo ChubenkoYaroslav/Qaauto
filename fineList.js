@@ -1,5 +1,6 @@
 "use strict";
 window.fineList = {
+
   searchFines: searchFines,
 };
 
@@ -16,3 +17,5 @@ function searchFines(searchData) {
 
   return result;
 }
+
+   
