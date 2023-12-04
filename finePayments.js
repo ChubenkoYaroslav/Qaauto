@@ -1,4 +1,5 @@
 "use strict";
+
 let fineNumber = document.getElementById("fineNumber");
 let passport = document.getElementById("passport");
 let creditCardNumber = document.getElementById("creditCardNumber");
@@ -6,9 +7,13 @@ let cvv = document.getElementById("cvv");
 let amount = document.getElementById("amount");
 let buttonSubmit = document.getElementById("payFine");
 
+
 let DB = data.finesData;
 
-buttonSubmit.addEventListener("click", payFine);
+
+buttonSubmit.addEventListener('click',payFine);
+function payFine(){
+
 
 function payFine() {
   let enteredFineNumber = fineNumber.value;
@@ -58,3 +63,4 @@ function payFine() {
   alert("Оплата пройшла успішно!");
   console.log("Оплата пройшла успішно. База даних оновлена:", DB);
 }
+
