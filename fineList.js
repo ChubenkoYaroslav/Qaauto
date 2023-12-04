@@ -1,27 +1,18 @@
 "use strict";
 window.fineList = {
-    searchFines : searchFines
-}
+  searchFines: searchFines,
+};
 
-//Ця зміна містить всі дані які в нас зберігаються у файлі data
 let DB = data.finesData;
 
-function searchFines(searchKey){
-    /*
-     Напишіть свій код тут!
-     Як ви бачите функція повертає статичні дані.
-     Замість масиву який прописаний хардкодом, вам необхідно реалізувати цю функцію
-     так, щоб вона повертала масив відповідно переданому значенню в функцію.
-     Саме значення - це "Пошук за номером" або "Пошук за типом штрафу"
-     Тип штрафу може бути тільки
-     - Перевищення швидкості
-     - Невірне паркування
-     - Їзда у не тверезому стані
-     */
+function searchFines(searchData) {
+  let result = [];
 
+  if (isNaN(searchData)) {
+    result = DB.filter((fine) => fine.тип === searchData);
+  } else {
+    result = DB.filter((fine) => fine.номер === searchData);
+  }
 
-    return [
-        {номер: '001', тип: 'Перевищення швидкості', сума: 100, дата: '2023-01-15'}
-    ];
+  return result;
 }
-
